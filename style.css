@@ -111,8 +111,10 @@ a {
 }
 
 .hero-card {
+  position: relative;
+  isolation: isolate;
   padding: 0;
-  overflow: visible; /* 프로필 사진이 커버 밖으로 올라와도 안 잘리게 */
+  overflow: hidden;
 }
 
 .cover-photo {
@@ -124,19 +126,22 @@ a {
 }
 
 .hero-body {
-  position: relative;
-  z-index: 2; /* 커버보다 위에 배치 */
-  padding: 0 48px 46px;
+  position: static;
+  z-index: auto;
+  padding: 95px 48px 46px;
 }
 
 .profile-photo {
-  position: relative;
-  z-index: 3; /* 커버/오버레이보다 가장 위 */
+  position: absolute;
+  z-index: 10;
+  top: 158px;
+  left: 48px;
+
   display: block;
   width: 154px;
   height: 154px;
-  margin-top: -77px;
-  margin-bottom: 18px;
+  margin: 0;
+
   border: 5px solid #ffffff;
   border-radius: 50%;
   object-fit: cover;
@@ -556,13 +561,13 @@ a {
 }
 
 @media (max-width: 700px) {
-  .card {
-    padding: 30px 24px;
-    border-radius: 16px;
+  .hero-card {
+    padding: 0;
   }
 
   .hero-body {
-    padding: 0 24px 30px;
+    position: static;
+    padding: 77px 24px 30px;
   }
 
   .cover-photo {
@@ -570,9 +575,11 @@ a {
   }
 
   .profile-photo {
+    top: 101px;
+    left: 24px;
     width: 118px;
     height: 118px;
-    margin-top: -59px;
+    margin: 0;
     border-width: 4px;
   }
 
