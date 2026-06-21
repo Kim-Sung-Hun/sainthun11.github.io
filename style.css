@@ -110,6 +110,10 @@ a {
   scroll-margin-top: 40px;
 }
 
+/* =========================
+   Hero / Profile Section
+   ========================= */
+
 .hero-card {
   position: relative;
   isolation: isolate;
@@ -125,9 +129,16 @@ a {
   border-radius: 20px 20px 0 0;
 }
 
+.cover-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
 .hero-body {
   position: static;
-  z-index: auto;
   padding: 95px 48px 46px;
 }
 
@@ -561,17 +572,23 @@ a {
 }
 
 @media (max-width: 700px) {
-  .hero-card {
-    padding: 0;
+  .card {
+    padding: 30px 24px;
+    border-radius: 16px;
   }
 
-  .hero-body {
-    position: static;
-    padding: 77px 24px 30px;
+  .hero-card {
+    padding: 0;
+    border-radius: 16px;
   }
 
   .cover-photo {
     height: 160px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .hero-body {
+    padding: 77px 24px 30px;
   }
 
   .profile-photo {
@@ -635,5 +652,4 @@ a {
     transition: none !important;
   }
 }
-
 
